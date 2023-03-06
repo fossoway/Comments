@@ -12,6 +12,38 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
+<main class="main">
+  <div class="container">
+    <h1 class="main__title">Оставьте комментарий</h1>
+    <form class="form" action="https://jsonplaceholder.typicode.com/posts" method="post">
+      <label>
+        <input class="form__input" type="text" id="name" name="name" placeholder="Введите имя">
+      </label>
+      <label>
+        <input class="form__input" type="date" id="date" name="date" placeholder="Введите дату">
+      </label>
+      <label>
+        <textarea class="form__textarea" id="comment" name="comment"></textarea>
+      </label>
+      <button class="form__button" type="submit">Отправить</button>
+    </form>
+  </div>
+  <section class="comments">
+    <div class="container">
+      <h2 class="comments__title">Список комментариев</h2>
+      <div class="comments__wrapper">
+        <div class="comments__header">
+          <p class="comments__name">Name</p>
+          <p class="comments__date">сегодня, 10:44</p>
+          <button type="button" class="comments__button comments__button-delete"></button>
+        </div>
+        <p class="comments__text">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi assumenda ducimus explicabo, iure laborum magni modi officiis quasi sequi tenetur. Accusamus adipisci autem doloribus eligendi in quas ratione soluta, voluptatum. Ab, beatae commodi distinctio doloremque eligendi facere fuga harum laborum laudantium mollitia necessitatibus nisi numquam obcaecati optio, perspiciatis provident quaerat quidem quo ratione recusandae rerum soluta tenetur ut vel voluptas? Accusamus architecto deleniti distinctio dolorum error ipsa ullam, veniam! Delectus doloribus ea odio possimus vitae. Accusantium aliquid aspernatur assumenda dignissimos earum excepturi labore minima neque nobis nostrum tempore, unde voluptatibus. At blanditiis consequatur corporis culpa cumque distinctio eaque error et impedit ipsum laboriosam magnam nobis nostrum perferendis possimus, provident quaerat quibusdam quis quo quod reiciendis sequi soluta totam vitae, voluptatum. Placeat provident, voluptate. Accusantium ad amet autem blanditiis, dolores ducimus eaque facere fugit illo magnam maiores neque nisi quas quisquam quo ratione rem repellat repellendus suscipit unde? Animi, beatae, corporis. Accusantium commodi culpa debitis enim esse expedita ipsum, maxime rem. Alias, beatae, dolorum earum error ex fugiat impedit ipsum, itaque magni maiores minima nihil nobis perferendis ratione reprehenderit tempora voluptate! Dignissimos dolores, sunt! Alias atque dolor eius eveniet expedita impedit in inventore itaque laboriosam magnam magni maiores maxime, numquam officiis porro quam quisquam rerum sint soluta tempora tempore veniam voluptatibus! Accusamus ad blanditiis distinctio doloremque eaque ex exercitationem fugiat, harum necessitatibus nulla quaerat quia quis quisquam quos reiciendis repellat veritatis vero? Dolore enim fugiat fugit, impedit molestias perspiciatis reiciendis similique. Ab blanditiis consequatur consequuntur, cumque cupiditate distinctio dolores esse id illum in iusto labore laborum magnam maiores maxime, minus mollitia nam nihil odit officia porro sequi suscipit ullam velit veritatis! Aliquam dolores expedita nulla odio optio praesentium quia repellendus. Dolorem dolores explicabo incidunt libero nemo? Obcaecati, quidem, reprehenderit?
+        </p>
+        <button type="button" class="comments__button comments__button-like"></button>
+      </div>
+    </div>
+  </section>
+</main>
 </body>
 </html>

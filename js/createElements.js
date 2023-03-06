@@ -1,32 +1,49 @@
+const dateFormat = (datePost) => {
+  const now = new Date();
+  const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  const yesterday = new Date(now.getFullYear(), now.getMonth(), now.getDate() - 1);
+  const diffToday = now - today;
+  const diffYesterday = now - yesterday;
+  if ((now - datePost) < diffToday) {
+    return 'Сегодня';
+  } else if (((now - datePost) > diffToday) && ((now - datePost) < diffYesterday)) {
+    return 'Вчера';
+  }
+  return datePost.toLocaleDateString();
+}
+
+
+const createElemComments = (tag, classNameList) => {
+  const elem = document.createElement(tag);
+  elem.classList.add(...classNameList);
+  return elem;
+};
+
+
 export const createComment = ({name, date, id, comment, isLike}) => {
-  const wrapper = document.createElement('div');
-  wrapper.classList.add('comments__wrapper');
+  const wrapper = createElemComments('div', ['comments__wrapper']);
   wrapper.id = id;
 
-  const header = document.createElement('div');
-  header.classList.add('comments__header');
+  const header = createElemComments('div', ['comments__header']);
 
-  const userName = document.createElement('p');
-  userName.classList.add('comments__name');
+  const userName = createElemComments('p', ['comments__name']);
   userName.textContent = name;
 
-  const dateElem = document.createElement('p');
-  dateElem.classList.add('comments__date');
-  dateElem.textContent = date;
+  const dateElem = createElemComments('p', ['comments__date']);
+  const datePost = new Date(date);
+  const templateDate = dateFormat(datePost);
+  dateElem.textContent = `${templateDate}, ${datePost.toLocaleTimeString()}`;
 
-  const deleteBtn = document.createElement('button');
+  const deleteBtn = createElemComments('button', ['comments__button', 'comments__button-delete']);
   deleteBtn.type = 'button';
-  deleteBtn.classList.add('comments__button', 'comments__button-delete');
 
   header.append(userName, dateElem, deleteBtn);
 
-  const textComment = document.createElement('p');
-  textComment.classList.add('comments__text');
+  const textComment = createElemComments('p', ['comments__text']);
   textComment.textContent = comment;
 
-  const likeBtn = document.createElement('button');
+  const likeBtn = createElemComments('button', ['comments__button', 'comments__button-like'])
   likeBtn.type = 'button';
-  likeBtn.classList.add('comments__button', 'comments__button-like');
   if (isLike === 'yes') {
     likeBtn.classList.add('comments__button-fill');
   }

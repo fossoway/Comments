@@ -1,6 +1,7 @@
-export const createComment = ({name, date, comment}) => {
+export const createComment = ({name, date, id, comment, isLike}) => {
   const wrapper = document.createElement('div');
   wrapper.classList.add('comments__wrapper');
+  wrapper.id = id;
 
   const header = document.createElement('div');
   header.classList.add('comments__header');
@@ -26,6 +27,9 @@ export const createComment = ({name, date, comment}) => {
   const likeBtn = document.createElement('button');
   likeBtn.type = 'button';
   likeBtn.classList.add('comments__button', 'comments__button-like');
+  if (isLike === 'yes') {
+    likeBtn.classList.add('comments__button-fill');
+  }
 
   wrapper.append(header, textComment,likeBtn);
 

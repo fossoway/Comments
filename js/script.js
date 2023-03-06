@@ -1,6 +1,6 @@
 import { getStorage } from "./storage.js";
 import { renderComments, addComment } from "./render.js";
-import { commentFormControl } from "./control.js";
+import { commentFormControl, addLike } from "./control.js";
 
 
 const init = (selectorApp) => {
@@ -12,6 +12,8 @@ const init = (selectorApp) => {
   const data = getStorage(localStorageKey);
   renderComments(app, data);
   commentFormControl(form, app, localStorageKey);
+  addLike(app, localStorageKey);
+
 }
 
 window.commentsList = init;

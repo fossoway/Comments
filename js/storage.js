@@ -15,4 +15,19 @@ const removeStorage = (key, number) => {
 };
 
 
-export { getStorage, setStorage, removeStorage };
+const editStorage = (key, number) => {
+  const commentList = getStorage(key);
+  const index = commentList.findIndex(i => i.id === number);
+  switch (commentList[index].isLike) {
+    case 'yes':
+      commentList[index].isLike = 'no';
+      break;
+    case 'no':
+      commentList[index].isLike = 'yes';
+      break;
+  }
+  localStorage.setItem(key, JSON.stringify(commentList));
+};
+
+
+export { getStorage, setStorage, removeStorage, editStorage };

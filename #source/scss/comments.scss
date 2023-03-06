@@ -1,0 +1,49 @@
+.comments__wrapper{
+  display: flex;
+  flex-direction: column;
+}
+.comments__header{
+  padding: 5px 0;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #351F00;
+}
+.comments__button{
+  border:none;
+  background-color: inherit;
+  content:"";
+  background-size: cover;
+  height: 25px;
+  width: 25px;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+.comments__button-delete{
+  background-image: url("../../img/trash.svg");
+  position: relative;
+  &:hover:before{
+    content:"Удалить";
+    position: absolute;
+    left: -80px;
+    top: 2px;
+  }
+}
+.comments__button-like{
+  background-image: url("../../img/heart.svg");
+  align-self: flex-end;
+}
+.comments__button-fill{
+  align-self: flex-end;
+  background-image: url("../../img/heart-fill.svg");
+}
+.comments__wrapper{
+  margin-bottom: 50px;
+}
+.comments__name{
+  font-weight: 700;
+}
+.comments__text{
+  text-align: justify;
+}

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -328,7 +329,7 @@ body {
   min-width: 320px;
   min-height: 100vh;
   font-family: "Lora", serif;
-  background-color: #D2B090;
+  background-color: #EFCBAB;
 }
 
 img, svg {
@@ -409,7 +410,7 @@ iframe {
   padding-left: 5px;
 }
 .form .form__textarea {
-  padding-left: 5px;
+  padding: 5px;
   width: 250px;
   height: 150px;
   resize: none;
@@ -424,7 +425,81 @@ iframe {
   color: white;
   border-radius: 15px;
 }
+.form .form__button:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
 
 .main__title {
   margin-bottom: 40px;
+}
+
+.comments__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.comments__header {
+  padding: 5px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #351F00;
+}
+
+.comments__button {
+  border: none;
+  background-color: inherit;
+  content: "";
+  background-size: cover;
+  height: 25px;
+  width: 25px;
+}
+.comments__button:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.comments__button-delete {
+  background-image: url("../../img/trash.svg");
+  position: relative;
+}
+.comments__button-delete:hover:before {
+  content: "Удалить";
+  position: absolute;
+  left: -80px;
+  top: 2px;
+}
+
+.comments__button-like {
+  background-image: url("../../img/heart.svg");
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+.comments__button-fill {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  background-image: url("../../img/heart-fill.svg");
+}
+
+.comments__wrapper {
+  margin-bottom: 50px;
+}
+
+.comments__name {
+  font-weight: 700;
+}
+
+.comments__text {
+  text-align: justify;
 }

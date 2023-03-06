@@ -25,7 +25,7 @@ export const createComment = ({name, date, comment}) => {
 
   const likeBtn = document.createElement('button');
   likeBtn.type = 'button';
-  likeBtn.classList.add('comments__button', 'comments__button-delete');
+  likeBtn.classList.add('comments__button', 'comments__button-like');
 
   wrapper.append(header, textComment,likeBtn);
 

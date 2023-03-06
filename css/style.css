@@ -434,6 +434,10 @@ iframe {
   margin-bottom: 40px;
 }
 
+.comments {
+  min-width: 70%;
+}
+
 .comments__wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -502,4 +506,5 @@ iframe {
 
 .comments__text {
   text-align: justify;
+  margin-bottom: 10px;
 }

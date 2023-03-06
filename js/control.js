@@ -7,7 +7,6 @@ const commentFormControl = (form, elem, localStorageKey) => {
     event.preventDefault();
     const formData = new FormData(event.target);
     const newComment = Object.fromEntries(formData);
-    console.log(newComment);
     newComment.id = Math.round(Math.random() * 100000).toString();
     newComment.isLike = 'no';
     setStorage(localStorageKey, newComment);
@@ -31,4 +30,16 @@ const addLike = (app, localStorageKey) => {
 };
 
 
-export { commentFormControl, addLike };
+const deleteComment = (app, localStorageKey) => {
+  app.addEventListener('click', e => {
+    if (e.target.closest('.comments__button-delete')) {
+      e.target.closest('.comments__wrapper').remove();
+      const id = e.target.closest('.comments__wrapper').id;
+      console.log(id);
+      removeStorage(localStorageKey, id);
+    }
+  })
+}
+
+
+export { commentFormControl, addLike, deleteComment };

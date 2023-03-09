@@ -57,8 +57,7 @@ const commentFormControl = (form, elem, localStorageKey) => {
       newComment.id = Math.round(Math.random() * 100000).toString();
       newComment.isLike = 'no';
       if (!newComment.date) {
-        const today = new Date();
-        newComment.date = today.toLocaleString();
+        newComment.date = new Date();
       }
       setStorage(localStorageKey, newComment);
       addComment(newComment, elem);

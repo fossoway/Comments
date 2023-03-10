@@ -489,7 +489,7 @@ iframe {
 }
 
 .comments__button-delete {
-  background-image: url("../../img/trash.svg");
+  background-image: url("../img/trash.svg");
   position: relative;
 }
 .comments__button-delete:hover:before {
@@ -500,7 +500,7 @@ iframe {
 }
 
 .comments__button-like {
-  background-image: url("../../img/heart.svg");
+  background-image: url("../img/heart.svg");
   -ms-flex-item-align: end;
       align-self: flex-end;
 }

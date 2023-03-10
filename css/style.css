@@ -508,7 +508,7 @@ iframe {
 .comments__button-fill {
   -ms-flex-item-align: end;
       align-self: flex-end;
-  background-image: url("../../img/heart-fill.svg");
+  background-image: url("../img/heart-fill.svg");
 }
 
 .comments__wrapper {
